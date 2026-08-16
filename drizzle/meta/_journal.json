@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1784652158673,
+      "tag": "0000_parched_scream",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1784661180549,
+      "tag": "0001_organic_shaman",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1784910600000,
+      "tag": "0002_seed_test_admin",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1785019200000,
+      "tag": "0003_reset_production_organizer",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1785020400000,
+      "tag": "0004_promote_production_organizer",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1785968533188,
+      "tag": "0005_demonic_rafael_vega",
+      "breakpoints": true
+    }
+  ]
+}

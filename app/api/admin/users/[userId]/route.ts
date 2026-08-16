@@ -1,0 +1,2 @@
+import { getDb } from "@/db"; import { requireAdminRequest } from "@/server/admin-request"; import { dataResponse, errorResponse } from "@/server/http"; import { AdminUserService } from "@/server/services/admin-user-service";
+export async function GET(request: Request, { params }: { params: Promise<{ userId: string }> }) { try { await requireAdminRequest(request); return dataResponse(await new AdminUserService(getDb()).getUserDetails(Number((await params).userId))); } catch (error) { return errorResponse(error); } }
