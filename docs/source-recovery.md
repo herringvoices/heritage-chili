@@ -4,7 +4,7 @@ This repository was initialized from ChatGPT Sites production version 55 of the 
 
 - Source commit: `2de27e4d0a83d080d22b4633d9c9de279a4df4eb`
 - Recovery date: 2026-08-16
-- Pre-sanitization verification: 93 unit tests passed
+- Sanitized snapshot verification: `npm test` passed (93 unit tests, production build, and rendered HTML check)
 
 The public snapshot intentionally excludes:
 
