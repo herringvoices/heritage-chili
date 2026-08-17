@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "heritage-chili",
+  "account_id": "afcf7fd3ee45efc29c6f91d012c67a92",
+  "main": "./dist/server/index.js",
+  "compatibility_date": "2026-08-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "no_bundle": true,
+  "vars": {
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_live_Y2xlcmsuaGVyaXRhZ2VjaGlsaS5vcmck",
+    "CLERK_ISSUER": "https://clerk.heritagechili.org",
+    "CLERK_JWKS_URL": "https://clerk.heritagechili.org/.well-known/jwks.json"
+  },
+  "assets": {
+    "directory": "./dist/client"
+  },
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.js", "**/*.mjs"]
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "heritage-chili-db",
+      "database_id": "49088833-bbd5-45f4-a78a-226e0b4fe296",
+      "migrations_dir": "./drizzle"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "heritage-chili-images"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
