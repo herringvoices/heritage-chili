@@ -8,6 +8,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } fro
 import { centsToInput, formatCents, parseCurrencyToCents } from "@/lib/currency";
 import { NOTICE_VERSIONS, type NoticeKey, type NoticeStatus } from "@/lib/notices";
 import { AttendeeNav } from "./attendee-nav";
+import { EventDetails } from "./event-details";
 import { Badge, Button, Card, Checkbox, EmptyState, ErrorState, Input, LoadingState } from "./ui";
 
 type AuthFetch = (path: string, init?: RequestInit) => Promise<Response>;
@@ -170,6 +171,8 @@ export function DashboardView({ authFetch }: { authFetch: AuthFetch }) {
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="grid gap-5">
       <AttendeeNav current="dashboard" />
+
+      <EventDetails />
 
       <div ref={checkinRef} className={tourTarget === "checkin" ? spotlightClass : ""}>
         <Card featured>

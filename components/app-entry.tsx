@@ -2,7 +2,7 @@
 
 import { ClerkProvider, SignInButton, SignOutButton, SignedIn, SignedOut, useAuth, useUser } from "@clerk/clerk-react";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Flame, LogOut, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronDown, LogOut, Sparkles } from "lucide-react";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { AdminShell, AttendeeShell } from "./shells";
 import { redirectForGate, type Gate } from "./route-guard";
@@ -12,6 +12,7 @@ import { ChiliEditorView, DashboardView } from "./dashboard-and-chili";
 import { AdminOperations, type AdminView } from "./admin-operations";
 import { ChiliDetailsView as AttendeeChiliDetailsView, ChiliListView as AttendeeChiliListView } from "./chili-discovery";
 import { AddVotesView, StandingsView } from "./attendee-extras";
+import { EventDetails } from "./event-details";
 
 export type AttendeeView = "dashboard" | "chilis" | "chili-details" | "add-votes" | "standings";
 
@@ -85,12 +86,7 @@ function PublicWelcome({ signInControl, setupPending = false }: { signInControl:
           <div className="mt-8 flex flex-wrap gap-3">{signInControl}<InfoDialog /></div>
           {setupPending ? <p className="mt-4 text-sm font-bold text-warm-gray">Sign-in is built and waiting for the Clerk environment values.</p> : null}
         </motion.section>
-        <Card featured className="relative overflow-hidden">
-          <div className="absolute -right-16 -top-16 size-44 rounded-full bg-amber/15 blur-3xl" />
-          <Flame className="size-10 text-amber" fill="currentColor" aria-hidden="true" />
-          <h2 className="mt-5 text-2xl font-black">One cozy night. One glorious champion.</h2>
-          <div className="mt-6 grid gap-3 text-sm font-bold text-warm-gray"><p className="rounded-xl border border-white/10 bg-black/15 p-4">RSVP for your whole party in one place.</p><p className="rounded-xl border border-white/10 bg-black/15 p-4">Pledge directly toward the adoption fundraiser.</p><p className="rounded-xl border border-white/10 bg-black/15 p-4">Check in, taste boldly, and cast your votes.</p></div>
-        </Card>
+        <EventDetails />
       </div>
     </AttendeeShell>
   );
