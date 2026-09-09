@@ -2,7 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "heritage-chili",
   "account_id": "afcf7fd3ee45efc29c6f91d012c67a92",
-  "main": "./dist/server/index.js",
+  "main": "./worker/index.ts",
   "compatibility_date": "2026-08-17",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
